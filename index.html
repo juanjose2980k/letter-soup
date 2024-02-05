@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Sopa de Letras</title>
+    <script src="letter-soup.js"></script>
+  </head>
+  <body>
+    <div class="container">
+    <H1>Sopa de letras dinámica</H1>
+    <form id="inputForm">
+      <label for="matriz">Matriz de letras (separadas por coma y salto de línea):</label>
+      <textarea id="matriz" name="matriz" rows="14" cols="30" required></textarea>
+
+      <label for="palabras">Palabras a buscar (separadas por coma):</label>
+      <input type="text" id="palabras" name="palabras" required />
+
+      <button type="button" onclick="generarSopaDeLetras()">Generar Sopa de Letras</button>
+    </form>
+
+    <table id="sopaDeLetras">
+      <tbody>
+        <!-- Filas y celdas se generan automáticamente con JavaScript -->
+      </tbody>
+    </table>
+    </div>
+  </body>
+</html>

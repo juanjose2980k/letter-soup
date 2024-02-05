@@ -1,0 +1,58 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    text-align: center;
+
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  label {
+    margin-bottom: 5px;
+  }
+
+  textarea,
+  input {
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 300px;
+  }
+
+  button {
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  table {
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    margin-bottom: 20px;
+  }
+
+  td {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+
+  .found {
+    background-color: yellow;
+  }

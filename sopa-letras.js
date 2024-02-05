@@ -1,39 +1,39 @@
 function generarSopaDeLetras() {
-    const matrizInput = document.getElementById("matriz").value;
-    const palabrasInput = document.getElementById("palabras").value;
-  
-    const matrizFilas = matrizInput.split("\n").map((fila) => fila.split(","));
-  
-    const sopaDeLetras = matrizFilas.map((fila) => fila.map((letra) => letra.trim()));
-  
-    const palabrasABuscar = palabrasInput.split(",").map((palabra) => palabra.trim());
-  
-    const table = document.getElementById("sopaDeLetras");
-    table.innerHTML = ""; // Limpiar tabla antes de generar nueva sopa de letras
-  
-    // Generar sopa de letras en la tabla
-    for (let i = 0; i < sopaDeLetras.length; i++) {
-      const row = document.createElement("tr");
-      for (let j = 0; j < sopaDeLetras[i].length; j++) {
-        const cell = document.createElement("td");
-        cell.textContent = sopaDeLetras[i][j];
-        row.appendChild(cell);
-      }
-      table.appendChild(row);
+  const matrizInput = document.getElementById("matriz").value;
+  const palabrasInput = document.getElementById("palabras").value;
+
+  const matrizFilas = matrizInput.split("\n").map((fila) => fila.toUpperCase().split(","));
+
+  const sopaDeLetras = matrizFilas.map((fila) => fila.map((letra) => letra.trim()));
+
+  const palabrasABuscar = palabrasInput.split(",").map((palabra) => palabra.toUpperCase().trim());
+
+  const table = document.getElementById("sopaDeLetras");
+  table.innerHTML = ""; // Limpiar tabla antes de generar nueva sopa de letras
+
+  // Generar sopa de letras en la tabla
+  for (let i = 0; i < sopaDeLetras.length; i++) {
+    const row = document.createElement("tr");
+    for (let j = 0; j < sopaDeLetras[i].length; j++) {
+      const cell = document.createElement("td");
+      cell.textContent = sopaDeLetras[i][j];
+      row.appendChild(cell);
     }
-  
-    // Llamar al método buscarPalabra para cada palabra
-    const palabrasNoEncontradas = [];
-    for (const palabra of palabrasABuscar) {
-      if (!buscarPalabra(sopaDeLetras, palabra)) {
-        palabrasNoEncontradas.push(palabra);
-      }
-    }
-  
-    if (palabrasNoEncontradas.length > 0) {
-      mostrarPalabrasNoEncontradas(palabrasNoEncontradas);
+    table.appendChild(row);
+  }
+
+  // Llamar al método buscarPalabra para cada palabra
+  const palabrasNoEncontradas = [];
+  for (const palabra of palabrasABuscar) {
+    if (!buscarPalabra(sopaDeLetras, palabra)) {
+      palabrasNoEncontradas.push(palabra);
     }
   }
+
+  if (palabrasNoEncontradas.length > 0) {
+    mostrarPalabrasNoEncontradas(palabrasNoEncontradas);
+  }
+}
   
   function buscarPalabra(sopaDeLetras, palabra) {
     const filas = sopaDeLetras.length;

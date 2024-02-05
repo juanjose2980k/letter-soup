@@ -1,7 +1,7 @@
 # Sopa de Letras Dinámica
 
 ## Recursos especiales utilizados en la solución
-- Stack overflow
+- Consultas y respuestas de la comunidad en Stack Overflow.
 
 ## Tecnologías utilizadas
 - HTML
